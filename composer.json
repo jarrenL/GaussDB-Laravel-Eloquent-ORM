@@ -1,0 +1,29 @@
+{
+    "name": "gaussdb.local/eloquent-adapter",
+    "description": "Laravel Eloquent ORM adapter for GaussDB 507 (centralized A + distributed ORA) over the official ODBC driver",
+    "type": "library",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "illuminate/database": "^12.0",
+        "illuminate/events": "^12.0",
+        "illuminate/pagination": "^12.0",
+        "ext-pdo_odbc": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GaussDb\\Eloquent\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GaussDb\\Eloquent\\GaussDBServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "gaussdb.local/laravel-acceptance",
+  "require": {"laravel/framework": "^12.0", "gaussdb.local/eloquent-adapter": "@dev"},
+  "repositories": [{"type": "path", "url": "../..", "options": {"symlink": true}}],
+  "config": {"allow-plugins": {}, "audit": {"block-insecure": true}}
+}

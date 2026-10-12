@@ -1,0 +1,11 @@
+vendor/
+.private/
+reports/
+probes/
+.env
+.env.*
+*.crt
+*.key
+*.pem
+__pycache__/
+*.pyc

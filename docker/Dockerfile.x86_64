@@ -1,0 +1,16 @@
+ARG PHP_BASE_IMAGE=gaussdb-php:8.3-x86_64-odbc
+FROM ${PHP_BASE_IMAGE}
+
+# Eloquent test runtime: composer + unzip for dist installs.
+# Base image provides PHP 8.3 + PDO_ODBC + the official GaussDB ODBC driver.
+RUN if command -v apt-get >/dev/null 2>&1; then \
+        apt-get update \
+        && apt-get install -y --no-install-recommends unzip git curl \
+        && rm -rf /var/lib/apt/lists/*; \
+    else \
+        echo 'no apt-get found' && exit 1; \
+    fi \
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --quiet \
+    && composer --version
+
+WORKDIR /workspace
